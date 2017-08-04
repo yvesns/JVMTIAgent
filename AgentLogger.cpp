@@ -17,3 +17,18 @@ void AgentLogger::log(string msg){
 	this->file.flush();
 	this->file.close();
 }
+
+void AgentLogger::print(const char *msg){
+	printf(msg);
+	fflush(stdout);
+}
+
+void AgentLogger::print(const char *msg, int data){
+	int len = strlen(msg);
+	char m[len+2];
+	strcpy(m, msg);
+	strcat(m, "%d");
+	
+	printf(m, data);
+	fflush(stdout);
+}

@@ -1,12 +1,16 @@
 target
 	JVMTIAgent.dll;
 
-library(WIN32) "kernel32 user32 advapi32 shell32 winmm";
+library(WIN32) "kernel32 user32 advapi32 shell32 winmm WS2_32";
 
 file
 	JVMTIAgent.h,
 	AgentLogger.cpp,
 	AgentLogger.h,
+	CommandHandler.cpp,
+	CommandHandler.h,
+	SocketHandler.cpp,
+	SocketHandler.h,
 	JVMTIAgent.cpp;
 
 mainconfig
